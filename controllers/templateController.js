@@ -4,14 +4,14 @@ import WhatsAppTemplate from "../models/WhatsAppTemplate.js";
 export const saveTemplate = async (req, res) => {
   try {
 
-    res.setHeader("Access-Control-Allow-Credentials", "true");
+    /*res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "https://odooproductsfrontend.vercel.app");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
     if (req.method === "OPTIONS") {
       return res.status(200).end();
-    }
+    }*/
 
     const { text } = req.body;
     if (!text) return res.status(400).json({ message: "Template text required" });
@@ -39,14 +39,14 @@ export const saveTemplate = async (req, res) => {
 export const getTemplate = async (req, res) => {
   try {
 
-    res.setHeader("Access-Control-Allow-Credentials", "true");
+    /*res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "https://odooproductsfrontend.vercel.app");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
     if (req.method === "OPTIONS") {
       return res.status(200).end();
-    }
+    }*/
     const template = await WhatsAppTemplate.findOne().sort({ createdAt: -1 });
     if (!template) return res.status(404).json({ message: "No template found" });
     res.json(template);
