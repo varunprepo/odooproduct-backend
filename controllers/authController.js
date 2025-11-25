@@ -98,14 +98,14 @@ export const register = async (req, res) => {
 /* ----------------- Login ----------------- */
 export const login = async (req, res) => {
   try {
-    /*res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "https://odooproductsfrontend.vercel.app");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
     if (req.method === "OPTIONS") {
       return res.status(200).end();
-    }*/
+    }
     //const { username, password } = req.body;
     const { email, password } = req.body;
     if (!email || !password) return res.status(400).json({ message: "email and password required" });
